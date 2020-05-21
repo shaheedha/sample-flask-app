@@ -1,5 +1,11 @@
 version: '3'
 services:
+  hawkeye:
+    image: stono/hawkeye
+    command: scan --target /usr/src/app
+    volumes:
+      - ./web:/usr/src/app
+  
   web:
     build: ./web
     ports:
